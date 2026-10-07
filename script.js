@@ -118,53 +118,52 @@ document.addEventListener('DOMContentLoaded', function () {
      --------------------------------------------------------- */
   const songLyrics = {
     131: {
-      title: '“What God Has Yoked Together”',
-      scripture: '(Matthew 19:5, 6)',
+      title: '“Nea Onyankopɔn Aka Abom”',
+      scripture: '(Mateo 19:5, 6)',
       body:
-        '1. With dignity and joy,\n' +
-        'A threefold cord is bound.\n' +
-        'With God and men to witness,\n' +
-        'These sacred vows resound.\n' +
+        '1. Yɛ-de ha-ma mmiɛn-sa\n' +
+        'A-bom a-ni-gye mu.\n' +
+        'Nyan-ko-pɔn ka wɔn ho nti\n' +
+        'Wɔ-bɛ-do-dɔ wɔn ho.\n' +
         '\n' +
-        '(CHORUS 1)\n' +
-        'He vowed before Jehovah\n' +
-        'To love her from the heart.\n' +
-        '“What God has yoked together,\n' +
-        'Let no man put apart.”\n' +
+        '(NNYESO 1)\n' +
+        'Wa-ka Ye-ho-wa ntam sɛ,\n' +
+        'Ɔ-bɛ-dɔ ne ye-re.\n' +
+        '‘Nea Nyan-ko-pɔn de a-bom,\n' +
+        'O-bia-ra nnte-tew mu.’\n' +
         '\n' +
-        '2. They both have searched God’s Word\n' +
-        'To learn to do his will,\n' +
-        'And now they seek his blessing,\n' +
-        'Their promise to fulfill.\n' +
+        '2. Wɔ-nim nea Bi-ble ka\n' +
+        'Fa a-wa-re-fo ho.\n' +
+        'Wɔ-bɛ-bɔ wɔn ho mmɔ-den\n' +
+        'A-di wɔn ntam no so.\n' +
         '\n' +
-        '(CHORUS 2)\n' +
-        'She vowed before Jehovah\n' +
-        'To love him from the heart.\n' +
-        '“What God has yoked together,\n' +
-        'Let no man put apart.”',
-      footnote: '(See also Gen. 2:24; Eccl. 4:12; Eph. 5:22-33.)',
+        '(NNYESO 2)\n' +
+        'Wa-ka Ye-ho-wa ntam sɛ,\n' +
+        'Ɔ-bɛ-dɔ ne ku-nu.\n' +
+        '‘Nea Nyan-ko-pɔn de a-bom,\n' +
+        'O-bia-ra nnte-tew mu.’',
+      footnote: '(Hwɛ Gen. 2:24; Ɔsɛnk. 4:12; Efe. 5:22-33 nso.)',
     },
     132: {
-      title: '“Now We Are One”',
+      title: 'Yɛaye Baako',
       scripture: '(Genesis 2:23, 24)',
       body:
-        '1. This is at last bone of my bone,\n' +
-        'Flesh of my flesh; now I’m not alone.\n' +
-        'God has provided a partner,\n' +
-        'Someone to call my own.\n' +
-        'Now we are one; now there can be\n' +
-        'Blessings to share for you and for me.\n' +
-        'As man and woman together,\n' +
-        'We are a family.\n' +
-        '\n' +
-        '2. Ev’ry day we’ll serve our God above.\n' +
-        'As he shows the way,\n' +
-        'Unfailing love we’ll display.\n' +
-        'As we have vowed, so may it be.\n' +
-        'Seasons of joy, may we come to see.\n' +
-        'Oh, may we honor Jehovah,\n' +
-        'And may you always be my love.',
-      footnote: '(See also Gen. 29:18; Eccl. 4:9, 10; 1 Cor. 13:8.)',
+        '1. Wo-ne me nnom-pe mu dom-pe,\n' +
+        'Ho-nam mu nam; wo-ne m’a-ni-gye.\n' +
+        'A-fei de ma-nya me dɔ-fo.\n' +
+        'Wo-ne me ho-ka-fo.\n' +
+        'Yɛa-yɛ baa-ko, me dɔ-fo pa.\n' +
+        'Ye-ho-wa bɛ-ma yɛn n-hyi-ra.\n' +
+        'Ɛn-nɛ yɛa-yɛ a-wa-re-fo,\n' +
+        'Yɛ-bɛ-yɛ a-bu-sua.\n' +
+        'Daa nyi-naa, yɛ-bɛ-som Ye-ho-wa.\n' +
+        'Ɔ-bɛ-ky’rɛ yɛn kwan,\n' +
+        'Yɛn dɔ no to ren-twa da!\n' +
+        'Yɛa-ka ntam sɛ yɛ-bɛ-te-na\n' +
+        'No-kwa-re-di mu a-ko-si daa.\n' +
+        'Ye-ho-wa a-ka yɛn a-bom.\n' +
+        'Wo-yɛ me dɔ-fo daa nyi-naa.',
+      footnote: '(Hwɛ Gen. 29:18; Ɔsɛnk. 4:9, 10; 1 Kor. 13:8 nso.)',
     },
   };
 
@@ -181,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (target) {
       const num = target.getAttribute('data-song');
       const song = songLyrics[num];
-      if (modalTitle) modalTitle.textContent = 'Song ' + num;
+      if (modalTitle) modalTitle.textContent = 'Dwom ' + num;
       if (song) {
         if (modalScripture) modalScripture.textContent = song.title + ' — ' + song.scripture;
         if (modalBody) modalBody.textContent = song.body;
@@ -205,6 +204,40 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeModal();
   });
+
+  /* ================= COPY ZOOM MEETING ID ================= */
+  const copyBtn = document.getElementById('copyZoomBtn');
+  const zoomIdEl = document.getElementById('zoomId');
+  if (copyBtn && zoomIdEl) {
+    copyBtn.addEventListener('click', function () {
+      const text = zoomIdEl.textContent.trim();
+      const done = function () {
+        copyBtn.textContent = '✓ Copied!';
+        copyBtn.classList.add('copied');
+        setTimeout(function () {
+          copyBtn.textContent = '📋 Copy Meeting ID';
+          copyBtn.classList.remove('copied');
+        }, 2000);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(function () {
+          fallbackCopy(text); done();
+        });
+      } else {
+        fallbackCopy(text); done();
+      }
+    });
+  }
+  function fallbackCopy(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (err) { /* no-op */ }
+    document.body.removeChild(ta);
+  }
 
   /* ================= STICKY NAV: scrolled state + mobile toggle ================= */
   const navbar = document.getElementById('navbar');
