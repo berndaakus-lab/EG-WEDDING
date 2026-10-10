@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     "Groom's Workers", "Bride's Workers",
     'Market Center South', 'Market Center',
     'Friends of the Bride', 'Friends of the Groom',
+    'Bride and her Girls',
   ];
 
   /* ================= RENDER: CEREMONY TIMELINE ================= */
